@@ -1,5 +1,10 @@
+import { Intro } from './components/Intro';
 import { HomePageContainer } from './styles';
 
 export const HomePage = () => {
-  return <HomePageContainer>HomePage</HomePageContainer>;
+  return (
+    <HomePageContainer>
+      <Intro />
+    </HomePageContainer>
+  );
 };
