@@ -1,5 +1,9 @@
 import { OrderCheckoutContainer } from './styles';
 
 export const CheckoutPage = () => {
-  return <OrderCheckoutContainer>CheckoutPage</OrderCheckoutContainer>;
+  return (
+    <OrderCheckoutContainer className="container">
+      <div></div>
+    </OrderCheckoutContainer>
+  );
 };
