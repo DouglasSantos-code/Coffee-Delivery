@@ -1,11 +1,16 @@
-import { BenefitsContainer, IntroContainer, IntroContent, IntroTitle } from './styles';
-import introImg from '../../../../assets/intro-img.png';
-import { SubTitle } from '../../../../components/Typography';
-import { InfoWithIcon } from '../../../../components/InfoWithIcon';
-import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
-import { useTheme } from 'styled-components';
+import {
+  BenefitsContainer,
+  IntroContainer,
+  IntroContent,
+  IntroTitle,
+} from "./styles";
+import introImg from "../../../../assets/intro-img.png";
+import { ShoppingCart, Package, Timer, Coffee } from "phosphor-react";
+import { useTheme } from "styled-components";
+import { RegularText } from "../../../../components/Typography";
+import { InfoWithIcon } from "../../../../components/InfoWithIcon";
 
-export const Intro = () => {
+export function Intro() {
   const { colors } = useTheme();
 
   return (
@@ -13,37 +18,41 @@ export const Intro = () => {
       <IntroContent className="container">
         <div>
           <section>
-            <IntroTitle size="xl">Encontre o café perfeito para qualquer hora do dia</IntroTitle>
-            <SubTitle size="l" color="subtitle" as="h3">
-              Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
-            </SubTitle>
+            <IntroTitle size="xl">
+              Encontre o café perfeito para qualquer hora do dia
+            </IntroTitle>
+            <RegularText as="h3" size="l" color="subtitle">
+              Com o Coffee Delivery você recebe seu café onde estiver, a
+              qualquer hora
+            </RegularText>
           </section>
 
           <BenefitsContainer>
             <InfoWithIcon
-              iconBg={colors['brand-yellow-dark']}
+              iconBg={colors["brand-yellow-dark"]}
               icon={<ShoppingCart weight="fill" />}
               text="Compra simples e segura"
             />
             <InfoWithIcon
-              iconBg={colors['base-text']}
+              iconBg={colors["base-text"]}
               icon={<Package weight="fill" />}
               text="Embalagem mantém o café intacto"
             />
             <InfoWithIcon
-              iconBg={colors['brand-yellow']}
+              iconBg={colors["brand-yellow"]}
               icon={<Timer weight="fill" />}
               text="Entrega rápida e rastreada"
             />
             <InfoWithIcon
-              iconBg={colors['brand-purple']}
+              iconBg={colors["brand-purple"]}
               icon={<Coffee weight="fill" />}
               text="O café chega fresquinho até você"
             />
           </BenefitsContainer>
         </div>
-        <img src={introImg} alt="Intro - Cup of coffe" />
+
+        <img src={introImg} />
       </IntroContent>
     </IntroContainer>
   );
-};
+}

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const DefaultLayoutContainer = styled.div`
+export const LayoutContainer = styled.div`
   .container {
     width: 100%;
     max-width: 70rem;

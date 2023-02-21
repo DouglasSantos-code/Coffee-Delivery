@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { IconContainer, InfoWithIconContainer } from './styles';
+import { InfoWithIconContainer, IconContainer } from "./styles";
+import { ReactNode } from "react";
 
 interface BenefitItemProps {
   icon: ReactNode;
@@ -11,7 +11,7 @@ export function InfoWithIcon({ icon, text, iconBg }: BenefitItemProps) {
   return (
     <InfoWithIconContainer>
       <IconContainer iconBg={iconBg}>{icon}</IconContainer>
-      {typeof text === 'string' ? <p>{text}</p> : text}
+      {typeof text === "string" ? <p>{text}</p> : text}
     </InfoWithIconContainer>
   );
 }

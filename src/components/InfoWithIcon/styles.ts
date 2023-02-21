@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const InfoWithIconContainer = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const IconContainer = styled.div<IconsContainerProps>`
   border-radius: 50%;
 
   background: ${({ iconBg }) => iconBg};
-  color: ${({ theme }) => theme.colors['base-white']};
+  color: ${({ theme }) => theme.colors["base-white"]};
 
   display: flex;
   align-items: center;

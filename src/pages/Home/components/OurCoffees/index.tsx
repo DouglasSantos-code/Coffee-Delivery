@@ -1,20 +1,20 @@
-import { Title } from '../../../../components/Typography';
-import { coffees } from '../../../../data/coffees';
-import { CoffeCard } from '../CoffeCard';
-import { CoffeeList, OurCoffesContainer } from './styles';
+import { TitleText } from "../../../../components/Typography";
+import { coffees } from "../../../../data/coffees";
+import { CoffeeCard } from "../CoffeeCard";
+import { CoffeeList, OurCoffeesContainer } from "./styles";
 
-export const OurCoffees = () => {
+export function OurCoffees() {
   return (
-    <OurCoffesContainer className="container">
-      <Title size="l" color="subtitle">
+    <OurCoffeesContainer className="container">
+      <TitleText size="l" color="subtitle">
         Nossos cafés
-      </Title>
+      </TitleText>
 
       <CoffeeList>
         {coffees.map((coffee) => (
-          <CoffeCard key={coffee.id} coffee={coffee} />
+          <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </CoffeeList>
-    </OurCoffesContainer>
+    </OurCoffeesContainer>
   );
-};
+}
