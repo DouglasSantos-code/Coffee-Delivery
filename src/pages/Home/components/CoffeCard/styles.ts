@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title, SubTitle } from '../../../../components/Typography';
+import { TitleText, RegularText } from '../../../../components/Typography';
 
 export const CoffeeCardContainer = styled.div`
   width: 100%;
@@ -40,7 +40,7 @@ export const Tags = styled.div`
   }
 `;
 
-export const Name = styled(Title).attrs({
+export const Name = styled(TitleText).attrs({
   size: 's',
   color: 'subtitle'
 })`
@@ -48,7 +48,7 @@ export const Name = styled(Title).attrs({
   margin-bottom: 0.5rem;
 `;
 
-export const Description = styled(SubTitle).attrs({
+export const Description = styled(RegularText).attrs({
   size: 's',
   color: 'label'
 })`
