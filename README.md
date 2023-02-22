@@ -20,7 +20,7 @@ Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvend
 <br />
 
 <div style="display:flex; gap:4px;">
-<a href="https://todo-challenge-seven.vercel.app/" target="_blank">
+<a href="https://coffee-delivery-black-five.vercel.app/" target="_blank">
 <img src="https://user-images.githubusercontent.com/71772559/178192066-d52e0cf7-906e-4baa-80f3-4b49dde153c0.png" />
 </a>
 
