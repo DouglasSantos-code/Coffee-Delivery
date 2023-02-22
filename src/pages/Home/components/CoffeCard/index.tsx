@@ -1,8 +1,10 @@
-import { ShoppingCart } from 'phosphor-react';
 import { QuantityInput } from '../../../../components/QuantityInput';
-import { SubTitle, Title } from '../../../../components/Typography';
+import { RegularText, TitleText } from '../../../../components/Typography';
+import { CoffeeCardContainer, Tags, Name, Description, CardFooter, AddCartWrapper } from './styles';
+import { ShoppingCart } from 'phosphor-react';
+import { useState } from 'react';
+import { useCart } from '../../../../hooks/useCart';
 import { formatMoney } from '../../../../utils/formatMoney';
-import { AddCartWrapper, CardFooter, CoffeeCardContainer, Description, Name, Tags } from './styles';
 
 export interface Coffee {
   id: number;
@@ -17,7 +19,27 @@ interface CoffeeProps {
   coffee: Coffee;
 }
 
-export const CoffeCard = ({ coffee }: CoffeeProps) => {
+export function CoffeeCard({ coffee }: CoffeeProps) {
+  const [quantity, setQuantity] = useState(1);
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1);
+  }
+
+  const { addCoffeeToCart } = useCart();
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity
+    };
+    addCoffeeToCart(coffeeToAdd);
+  }
+
   const formattedPrice = formatMoney(coffee.price);
 
   return (
@@ -34,19 +56,19 @@ export const CoffeCard = ({ coffee }: CoffeeProps) => {
 
       <CardFooter>
         <div>
-          <SubTitle size="s">R$</SubTitle>
-          <Title size="m" color="text" as="strong">
+          <RegularText size="s">R$</RegularText>
+          <TitleText size="m" color="text" as="strong">
             {formattedPrice}
-          </Title>
+          </TitleText>
         </div>
 
         <AddCartWrapper>
-          <QuantityInput />
-          <button>
+          <QuantityInput onIncrease={handleIncrease} onDecrease={handleDecrease} quantity={quantity} />
+          <button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </button>
         </AddCartWrapper>
       </CardFooter>
     </CoffeeCardContainer>
   );
-};
+}
